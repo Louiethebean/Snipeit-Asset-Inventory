@@ -4,7 +4,7 @@ This repository provides a clean and reliable installation guide for deploying [
 
 ## 📄 Installation Guide
 
-For full step-by-step instructions, refer to the [SnipeIT_Install_Guide_README.md](./SnipeIT_Install_Guide_README.md) in this repository.
+For full step-by-step instructions, refer to the [SnipeIT_Install_Guide](./SnipeIT_Install_Guide.md) in this repository.
 
 ## 🧰 Features
 
