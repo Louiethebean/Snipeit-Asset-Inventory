@@ -1,0 +1,33 @@
+<svg viewBox="0 0 800 260" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#5b6b7c"/>
+    </marker>
+  </defs>
+  <rect width="800" height="260" fill="#0f1620"/>
+  <text x="400" y="32" text-anchor="middle" fill="#e8edf2" font-size="18" font-weight="600">Snipe-IT — Dockerized Asset Inventory</text>
+
+  <g font-size="13" fill="#0f1620">
+    <rect x="20" y="90" width="150" height="70" rx="10" fill="#90e0ef"/>
+    <text x="95" y="115" text-anchor="middle" font-weight="600">Admin Browser</text>
+    <text x="95" y="133" text-anchor="middle">:8000 or HTTPS</text>
+
+    <rect x="220" y="90" width="170" height="70" rx="10" fill="#00b4d8"/>
+    <text x="305" y="115" text-anchor="middle" font-weight="600" fill="#fff">nginx (optional)</text>
+    <text x="305" y="133" text-anchor="middle" fill="#fff">Reverse proxy + SSL</text>
+
+    <rect x="440" y="90" width="160" height="70" rx="10" fill="#0077b6"/>
+    <text x="520" y="115" text-anchor="middle" font-weight="600" fill="#fff">Snipe-IT App</text>
+    <text x="520" y="133" text-anchor="middle" fill="#fff">Laravel container</text>
+
+    <rect x="650" y="90" width="130" height="70" rx="10" fill="#03045e"/>
+    <text x="715" y="115" text-anchor="middle" font-weight="600" fill="#fff">MariaDB</text>
+    <text x="715" y="133" text-anchor="middle" fill="#fff">Asset data</text>
+  </g>
+
+  <line x1="170" y1="125" x2="218" y2="125" stroke="#5b6b7c" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="390" y1="125" x2="438" y2="125" stroke="#5b6b7c" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="600" y1="125" x2="648" y2="125" stroke="#5b6b7c" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <text x="400" y="210" text-anchor="middle" fill="#8a99a8" font-size="12">Browser hits nginx (or app directly) → Snipe-IT container handles logic → MariaDB persists asset records</text>
+</svg>
