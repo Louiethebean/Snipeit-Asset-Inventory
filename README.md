@@ -26,3 +26,7 @@ Then follow the steps in the full guide.
 ## 🔒 Security Tip
 
 Always verify that your `.env` file is not publicly accessible via the web.
+
+## 📄 License
+
+This project is licensed under the MIT License. See [LICENSE](./MIT%20License.txt) for details.
