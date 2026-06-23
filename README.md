@@ -31,6 +31,15 @@ Then follow the steps in the full guide.
 
 Always verify that your `.env` file is not publicly accessible via the web.
 
+## 🎯 What I Learned / Skills Demonstrated
+
+- **Multi-container app deployment** — coordinating a Laravel app container and a MariaDB container via Docker Compose, including service dependencies and persistent volumes.
+- **Application secrets handling** — generating a Laravel `APP_KEY` correctly and keeping `.env` out of both git and public web access.
+- **IT asset management domain knowledge** — why organizations track hardware/license lifecycle in a dedicated system instead of spreadsheets, and what that system needs to expose (audit trail, checkouts, depreciation).
+- **Production-adjacent hardening** — verifying `.env` isn't web-accessible, a real misconfiguration that has caused actual credential leaks in the wild.
+
+**Problem solved:** a repeatable Docker-based deployment of an open-source asset management platform, with the security gotchas (`.env` exposure) called out instead of glossed over.
+
 ## 📄 License
 
 This project is licensed under the MIT License. See [LICENSE](./MIT%20License.txt) for details.
