@@ -31,6 +31,31 @@ Then follow the steps in the full guide.
 
 Always verify that your `.env` file is not publicly accessible via the web.
 
+## Tooling: Asset Audit Script
+
+Standing up Snipe-IT only solves half the problem — the other half is actually using the data it collects. `scripts/snipeit_audit.py` calls the Snipe-IT REST API directly and flags the three things that quietly go stale in every asset inventory: unassigned stock, devices nobody's checked in on, and expiring warranties.
+
+```bash
+pip install -r scripts/requirements.txt
+export SNIPEIT_URL=https://snipeit.example.com
+export SNIPEIT_TOKEN=your_api_token
+python scripts/snipeit_audit.py --stale-days 90 --warranty-warn-days 30 --format md
+```
+
+What it does:
+- Pages through `GET /api/v1/hardware` itself (handles pagination, not just a single page of results)
+- Flags unassigned assets sitting in inventory
+- Flags assets with no check-in inside a configurable window
+- Computes warranty expiry from purchase date + warranty months, and flags anything expiring soon or already expired
+- Outputs Markdown for a quick report or CSV for import elsewhere
+
+Run the test suite (mocks the Snipe-IT API response shape directly — no live instance or API token required):
+
+```bash
+pip install pytest
+pytest tests/
+```
+
 ## What I Learned / Skills Demonstrated
 
 - **Multi-container app deployment** — coordinating a Laravel app container and a MariaDB container via Docker Compose, including service dependencies and persistent volumes.
